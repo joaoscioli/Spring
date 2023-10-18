@@ -71,7 +71,7 @@ O modulo Spring Web Service é uma parte do framework Spring que permite criar e
 Para sabre mais sobre esse módulo acesse o link: https://spring.io/projects/spring-ws 
 
 # Versões / Atualizações
-A versão atual do Spring Framework é a 6.0.9, lançada em novembro de 2022. Essa versão trouxe diversas novidades e melhorias, como:
+A versão atual do Spring Framework é a 6.0.13, lançada em novembro de 2022. Essa versão trouxe diversas novidades e melhorias, como:
 - Um novo modelo de programação e configuração baseado em Jakarta EE 9, que substituiu o antigo Java EE 8.
 - Um suporte aprimorado ao JDK 17, que é a versão mais recente e estável do Java.
 - Uma integração mais fácil e eficiente com o GraalVM, que permite a criação de imagens nativas das aplicações Spring.
@@ -84,4 +84,21 @@ Ao verificar os projetos em cada branch, é importante ler os arquivos README de
 - Branch 01: 
 - Branch 02: 
 
-# Livros / Vídeos
+# Códigos Livros
+Os códigos dos livros estão organizados em pastas individuais, cada uma com o nome correspondente a um livro específico. Os códigos originais podem ser encontrados nos links indicados nos arquivos de nota contidos em cada pasta associada a um livro. Por outro lado, os códigos apresentados nas pastas foram desenvolvidos pelo proprietário deste repositório.
+- Pasta: Spring_in_Action.
+- Pasta: Learning_Spring_Boot.
+- Pasta: Pro_Spring_6_An_In_Depth.
+- Pasta: Modern_API_Development.
+
+# Livros / Canais / Blogs / Links
+Livros:
+- Spring in Action, Fifth Edition (Craig Walls)
+- Learning Spring Boot 3.0: Simplify the development..., 3rd Edition (Greg L. Turnquist), (Dave Syer), (Mark Heckler), (Josh Long)
+- Pro Spring 6 An In-Depth Guide to the Spring Framework, 6th Edition (Iuliana Cosmina, Rob Harrop, Chris Schaefer etc.)
+- Modern API Development with Spring and Spring Boot: Design highly... (Sourabh Sharma).
+Canais:
+
+Blogs:
+
+Links:
