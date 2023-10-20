@@ -9,7 +9,7 @@
     <body>
         <form method="POST" th:action="@{/orders}" th:object="${tacoOrder}">
             <h1>Order your taco creations!</h1>
-            <img th:src="@{/images/TacoCloud.png}"/>
+            <img style="height:20%; width: 20%" th:src="@{/images/TacoCloud.png}"/>
             <h3>Your tacos in this order:</h3>
             <a th:href="@{/design}" id="another">Design another tacos</a><br/>
             <ul>
@@ -37,6 +37,9 @@
             <h3>Here's how I'll pay...</h3>
             <label for="ccNumber">Credit Card #: </label>
             <input type="text" th:field="*{ccNumber}"/><br/>
+            <span class="validationError"
+                  th:if="${#fields.hasErrors('ccNumber')}"
+                  th:errors="*{ccNumber}">CC Num Error</span>
 
             <label for="ccExpiration">Expiration: </label>
             <input type="text" th:field="*{ccExpiration}"/><br/>

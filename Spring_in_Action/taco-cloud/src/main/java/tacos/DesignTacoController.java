@@ -1,5 +1,7 @@
 package tacos;
 
+import jakarta.validation.Valid;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import tacos.Ingredient.Type;
@@ -62,16 +64,13 @@ public class DesignTacoController {
     }
 
     @PostMapping
-    public String processTaco(Taco taco, @ModelAttribute TacoOrder tacoOrder) {
+    public String processTaco(@Valid Taco taco, Errors errors, @ModelAttribute TacoOrder tacoOrder) {
+        if (errors.hasErrors()) {
+            return "design";
+        }
         tacoOrder.addTaco(taco);
         log.info("Processing taco: {}", taco);
         return "redirect:/orders/current";
     }
 
-    @PostMapping
-    public String processOrder(TacoOrder order, SessionStatus sessionStatus) {
-        log.info("Order submitted: {}", order);
-        sessionStatus.setComplete();
-        return "redirect:/";
-    }
 }
