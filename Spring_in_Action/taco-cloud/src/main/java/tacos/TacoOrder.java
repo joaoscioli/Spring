@@ -1,28 +1,30 @@
 package tacos;
-
-
-import jakarta.validation.constraints.Digits;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import lombok.Data;
-import org.hibernate.validator.constraints.CreditCardNumber;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import org.hibernate.validator.constraints.CreditCardNumber;
+import jakarta.persistence.*;
+import lombok.Data;
+
 @Data
-@Document
+@Entity
+@Table(name="Taco_Order")
 public class TacoOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    private String id;
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long id;
 
-    private Date placedAt = new Date();
+    private Date placedAt;
+
+    @ManyToOne
+    private User user;
 
     @NotBlank(message="Delivery name is required")
     private String deliveryName;
@@ -49,9 +51,16 @@ public class TacoOrder implements Serializable {
     @Digits(integer=3, fraction=0, message="Invalid CVV")
     private String ccCVV;
 
+    @ManyToMany(targetEntity=Taco.class)
     private List<Taco> tacos = new ArrayList<>();
 
-    public void addTaco(Taco taco) {
-        this.tacos.add(taco);
+    public void addTaco(Taco design) {
+        this.tacos.add(design);
     }
+
+    @PrePersist
+    void placedAt() {
+        this.placedAt = new Date();
+    }
+
 }
