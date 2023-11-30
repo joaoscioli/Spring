@@ -88,6 +88,7 @@ Ao verificar os projetos em cada branch, é importante ler os arquivos README de
 Os códigos dos livros estão organizados em pastas individuais, cada uma com o nome correspondente a um livro específico. Os códigos originais podem ser encontrados nos links indicados nos arquivos de nota contidos em cada pasta associada a um livro. Por outro lado, os códigos apresentados nas pastas foram desenvolvidos pelo proprietário deste repositório.
 - Pasta: Spring_in_Action.
 - Pasta: Learning_Spring_Boot.
+- Pasta: Full_Stack_Development_with_Spring_Boot_3_and_React.
 - Pasta: Pro_Spring_6_An_In_Depth.
 - Pasta: Modern_API_Development.
 
